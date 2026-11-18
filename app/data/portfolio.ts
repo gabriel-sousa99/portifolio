@@ -2,23 +2,24 @@
 
 export const profile = {
   name: 'Gabriel Sousa',
-  headline: 'Desenvolvedor full stack',
+  headline: 'Desenvolvedor back-end e full stack sênior',
   // Texto curto de disponibilidade ao lado do título. Exemplo: 'aberto a freelas'. Vazio = oculto.
   availability: '',
   title: 'Construo sistemas web completos: API, interface, infraestrutura e agentes de IA.',
   description:
-    'Trabalho com PHP e Laravel, Vue e Quasar, Flutter com GPS e tempo real, Oracle e PostgreSQL, Rust e automação com agentes. Entrego o sistema em produção, com testes, pipeline e monitoramento.',
+    'Tenho 8 anos em TI e 5 em desenvolvimento, com mais de 4 em sistemas de saúde. Trabalho com PHP e Laravel, Vue e Quasar, Flutter com GPS e tempo real, Oracle e PostgreSQL, Rust e automação com agentes.',
   github: 'https://github.com/gabriel-sousa99',
   // Preencha para mostrar os botões de contato. Vazio = botão oculto.
-  email: '',
-  linkedin: ''
+  email: 'g.a.sousa@hotmail.com',
+  linkedin: 'https://www.linkedin.com/in/gabriel-augusto-sousa',
+  location: 'Rio de Janeiro, Brasil'
 }
 
 export const stats = [
-  { value: '2022', label: 'primeiro commit em produção' },
-  { value: '10 mil+', label: 'commits em repositórios de trabalho' },
-  { value: '100+', label: 'repositórios com contribuição' },
-  { value: '5', label: 'linguagens em uso: PHP, TypeScript, Rust, Python, Dart' }
+  { value: '8 anos', label: 'em TI, desde 2018' },
+  { value: '5 anos', label: 'em desenvolvimento de software' },
+  { value: '4+ anos', label: 'em sistemas de saúde' },
+  { value: '10 mil+', label: 'commits em repositórios de trabalho desde 2022' }
 ]
 
 export const services = [
@@ -54,7 +55,7 @@ export const stack = [
     icon: 'i-lucide-server',
     title: 'Backend',
     note: 'Arquitetura Action-Based: Actions, DTOs, Services e Contracts.',
-    items: ['PHP 8.4', 'Laravel 13', 'Sanctum', 'Eloquent', 'Horizon', 'Octane', 'Inertia', 'Livewire', 'Symfony 2', 'PHP 5.3']
+    items: ['PHP 8.4', 'Laravel 13', 'APIs REST', 'Sanctum', 'Spatie Permission', 'Máquinas de estados', 'Node.js', 'Eloquent', 'Horizon', 'Octane', 'Inertia', 'Livewire', 'Symfony 2', 'PHP 5.3']
   },
   {
     icon: 'i-lucide-layout-dashboard',
@@ -72,13 +73,13 @@ export const stack = [
     icon: 'i-lucide-database',
     title: 'Dados',
     note: 'Modelagem, consulta e carga em lote.',
-    items: ['Oracle', 'PL/SQL', 'PostgreSQL', 'SQLite', 'Redis', 'Typesense']
+    items: ['Oracle', 'PL/SQL', 'PostgreSQL', 'MySQL', 'SQL Server', 'SQLite', 'Redis', 'Typesense']
   },
   {
     icon: 'i-lucide-container',
     title: 'Plataforma',
     note: 'Do commit ao deploy, com observabilidade.',
-    items: ['Docker', 'Docker Swarm', 'Podman', 'Portainer', 'GitLab CI', 'GitHub Actions', 'Caddy', 'OpenTelemetry', 'Prometheus', 'Grafana', 'Tempo', 'Loki', 'Kibana APM']
+    items: ['Docker', 'Docker Swarm', 'Podman', 'Portainer', 'GitLab CI', 'GitHub Actions', 'Nginx', 'Caddy', 'Deploy blue-green', 'OpenTelemetry', 'Prometheus', 'Grafana', 'Tempo', 'Loki', 'Kibana APM']
   },
   {
     icon: 'i-lucide-shield-check',
@@ -124,25 +125,46 @@ export const commitsPerYear = [
   { year: '2026', value: 5853 }
 ]
 
+// Experiência profissional. O site mostra o setor de cada empresa, não o nome.
 export const timeline = [
   {
-    date: '2022',
+    date: 'out 2018 – mai 2021',
+    icon: 'i-lucide-server-cog',
+    title: 'Assistente de TI · contact center',
+    description: 'Suporte a servidores, máquinas virtuais, redes, Azure e Office 365. Ferramentas internas em PHP e MySQL. Relatórios e indicadores em Power BI.'
+  },
+  {
+    date: 'mai 2021 – out 2021',
+    icon: 'i-lucide-radar',
+    title: 'Analista de monitoramento NOC · serviços de TI',
+    description: 'Monitoramento de disponibilidade de sistemas e redes. Configuração de firewalls, switches, roteadores e políticas de SD-WAN.'
+  },
+  {
+    date: 'out 2021 – jun 2022',
+    icon: 'i-lucide-code',
+    title: 'Analista de desenvolvimento · contact center',
+    description: 'Sistemas em PHP, JavaScript e Node.js. Rotinas automatizadas com scripts e ETL. Painéis e relatórios SQL em PostgreSQL, MySQL e SQL Server. Fluxos de chatbot.'
+  },
+  {
+    date: 'jun 2022 – nov 2023',
     icon: 'i-lucide-rocket',
-    title: 'Produto completo em três camadas',
-    description: 'API em Laravel, SPA em Vue e Quasar e app em Flutter com GPS para o mesmo produto de atendimento em campo, com Oracle.'
+    title: 'Desenvolvedor full stack júnior · saúde',
+    description: 'Sistemas hospitalares internos com Laravel, Vue e Oracle. Autenticação centralizada com SSO entre aplicações. Migração de Symfony para Laravel e de Vue 2 para Vue 3 com Pinia e Vite.'
   },
   {
-    date: '2024',
-    icon: 'i-lucide-git-branch',
-    title: 'Vários sistemas em paralelo',
-    description: 'Novas APIs e SPAs administrativas sobre um template comum, com Git Flow, pipeline por branch e deploy em Docker Swarm.'
-  },
-  {
-    date: '2026',
+    date: 'nov 2023 – atual',
     icon: 'i-lucide-bot',
-    title: 'Rust, observabilidade e agentes de IA',
-    description: 'ETL reescrito em Rust, traces com OpenTelemetry, gates de SonarQube no pipeline, servidores MCP próprios e uma esteira de agentes que leva o chamado até o merge request.'
+    title: 'Desenvolvedor full stack pleno · saúde',
+    description: 'Arquitetura e implementação da API de uma plataforma de atenção domiciliar. Observabilidade, deploy blue-green, gates de qualidade no pipeline, geolocalização em tempo real, ETL em Rust e agentes de IA com servidores MCP.'
   }
+]
+
+export const education = [
+  { icon: 'i-lucide-graduation-cap', title: 'Pós-graduação em Engenharia de Software', description: 'Universidade Estácio de Sá · 2025' },
+  { icon: 'i-lucide-graduation-cap', title: 'Tecnólogo em Análise e Desenvolvimento de Sistemas', description: 'Universidade Estácio de Sá · 2021–2023' },
+  { icon: 'i-lucide-circuit-board', title: 'Técnico em Eletrônica', description: 'Escola Técnica Pandiá Calógeras · 2014–2016' },
+  { icon: 'i-lucide-badge-check', title: 'Certified Meraki Networking Associate', description: 'Cisco Meraki' },
+  { icon: 'i-lucide-languages', title: 'Idiomas', description: 'Português nativo · Inglês intermediário e técnico' }
 ]
 
 export const cases = [
@@ -177,6 +199,14 @@ export const cases = [
     solution: 'Escrevi um servidor MCP somente leitura com 17 ferramentas: 10 de APM e 7 de contêineres. Ele remove dado pessoal, limita cada resposta a 60 KB e usa chave com escopo mínimo.',
     result: 'O agente responde perguntas em linguagem natural com a evidência do trace.',
     tech: ['Python', 'MCP', 'httpx', 'Kibana APM', 'ES|QL', 'pytest']
+  },
+  {
+    icon: 'i-lucide-arrow-left-right',
+    title: 'Deploy blue-green com rollback',
+    problem: 'Cada release interrompia o sistema para os usuários.',
+    solution: 'Projetei o deploy com dois ambientes e alternância pelo proxy. Se a versão nova falha na verificação, o tráfego volta para a anterior de forma automática.',
+    result: 'As releases entram com menos interrupção e com retorno automático.',
+    tech: ['Docker', 'Nginx', 'GitLab CI']
   },
   {
     icon: 'i-lucide-wifi-off',

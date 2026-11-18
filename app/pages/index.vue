@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ButtonProps, NavigationMenuItem, TabsItem } from '@nuxt/ui'
-import { profile, stats, services, stack, exploring, evolution, commitsPerYear, timeline, cases, flows, practices, openSource } from '~/data/portfolio'
+import { profile, stats, services, stack, exploring, evolution, commitsPerYear, timeline, education, cases, flows, practices, openSource } from '~/data/portfolio'
 
 const nav: NavigationMenuItem[] = [
   { label: 'Entregas', to: '#entregas' },
@@ -56,7 +56,7 @@ const flowTabs: TabsItem[] = flows.map((f, i) => ({ label: f.label, icon: f.icon
           <template #headline>
             <UBadge variant="subtle" size="lg" class="font-mono">
               <span class="mr-1 inline-block size-1.5 rounded-full bg-primary" />
-              {{ profile.headline }}<template v-if="profile.availability"> · {{ profile.availability }}</template>
+              {{ profile.headline }} · {{ profile.location }}<template v-if="profile.availability"> · {{ profile.availability }}</template>
             </UBadge>
           </template>
         </UPageHero>
@@ -91,7 +91,7 @@ const flowTabs: TabsItem[] = flows.map((f, i) => ({ label: f.label, icon: f.icon
         </p>
       </UPageSection>
 
-      <UPageSection id="trajetoria" headline="Trajetória" title="De onde vim e para onde fui" description="A evolução técnica desde 2022, medida em código.">
+      <UPageSection id="trajetoria" headline="Trajetória" title="De onde vim e para onde fui" description="Do suporte e das redes até a arquitetura de sistemas. O site mostra o setor de cada empresa, não o nome.">
         <div class="grid gap-10 lg:grid-cols-2">
           <UTimeline :items="timeline" :default-value="timeline.length - 1" />
           <div class="space-y-8">
@@ -109,6 +109,12 @@ const flowTabs: TabsItem[] = flows.map((f, i) => ({ label: f.label, icon: f.icon
             </UPageCard>
           </div>
         </div>
+      </UPageSection>
+
+      <UPageSection id="formacao" headline="Formação" title="Estudo e certificação">
+        <UPageGrid>
+          <UPageCard v-for="e in education" :key="e.title" :icon="e.icon" :title="e.title" :description="e.description" variant="subtle" />
+        </UPageGrid>
       </UPageSection>
 
       <UPageSection id="casos" headline="Casos" title="Problemas que resolvi" description="Os casos estão sem nome de sistema ou de cliente. O que importa é o problema, a técnica e o resultado.">
