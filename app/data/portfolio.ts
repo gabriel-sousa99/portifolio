@@ -7,7 +7,7 @@ export const profile = {
   availability: '',
   title: 'Construo sistemas web completos: API, interface, infraestrutura e agentes de IA.',
   description:
-    'Trabalho com PHP e Laravel, Vue e Quasar, Oracle e PostgreSQL, Rust e automação com agentes. Entrego o sistema em produção, com testes, pipeline e monitoramento.',
+    'Trabalho com PHP e Laravel, Vue e Quasar, Flutter com GPS e tempo real, Oracle e PostgreSQL, Rust e automação com agentes. Entrego o sistema em produção, com testes, pipeline e monitoramento.',
   github: 'https://github.com/gabriel-sousa99',
   // Preencha para mostrar os botões de contato. Vazio = botão oculto.
   email: '',
@@ -36,6 +36,11 @@ export const services = [
     icon: 'i-lucide-bot',
     title: 'Automação com agentes de IA',
     description: 'Servidores MCP, skills, hooks e esteiras de agentes que leem chamados, analisam código e abrem merge requests para revisão humana.'
+  },
+  {
+    icon: 'i-lucide-map-pinned',
+    title: 'Rastreamento e tempo real',
+    description: 'App que captura GPS em segundo plano, API que recebe as posições e mapa que mostra as equipes ao vivo por WebSocket.'
   },
   {
     icon: 'i-lucide-database-zap',
@@ -91,7 +96,13 @@ export const stack = [
     icon: 'i-lucide-smartphone',
     title: 'Mobile',
     note: 'Apps de campo com uso offline.',
-    items: ['Flutter', 'Dart', 'Dio', 'sqflite']
+    items: ['Flutter', 'Dart', 'Dio', 'sqflite', 'Firebase Cloud Messaging', 'Crashlytics']
+  },
+  {
+    icon: 'i-lucide-map-pinned',
+    title: 'Geolocalização e tempo real',
+    note: 'Posição em segundo plano, mapas e eventos ao vivo.',
+    items: ['GPS em segundo plano', 'Geolocator', 'Google Maps', 'Mapbox GL', 'WebSocket', 'Laravel Reverb', 'Laravel Echo', 'Cálculo de distância e rota']
   }
 ]
 
@@ -118,7 +129,7 @@ export const timeline = [
     date: '2022',
     icon: 'i-lucide-rocket',
     title: 'Produto completo em três camadas',
-    description: 'API em Laravel, SPA em Vue e Quasar e app em Flutter para o mesmo produto de atendimento em campo, com Oracle.'
+    description: 'API em Laravel, SPA em Vue e Quasar e app em Flutter com GPS para o mesmo produto de atendimento em campo, com Oracle.'
   },
   {
     date: '2024',
@@ -135,6 +146,14 @@ export const timeline = [
 ]
 
 export const cases = [
+  {
+    icon: 'i-lucide-map-pinned',
+    title: 'Monitoramento de equipes em tempo real',
+    problem: 'A operação precisava ver onde cada profissional de campo estava e pagar a quilometragem pelo trajeto real.',
+    solution: 'O app em Flutter captura o GPS em segundo plano, com um fork próprio do plugin de localização. A captura segue o estado da jornada: ela para na pausa e quando a jornada fecha. A API recebe as posições e transmite cada uma por WebSocket. A SPA mostra as equipes em um mapa ao vivo.',
+    result: 'O painel mostra a posição das equipes ao vivo. A quilometragem sai do trajeto registrado, com testes para cada regra de cálculo.',
+    tech: ['Flutter', 'Geolocator', 'Laravel Reverb', 'WebSocket', 'Mapbox GL', 'Octane', 'Oracle']
+  },
   {
     icon: 'i-lucide-workflow',
     title: 'Esteira de agentes para chamados',
@@ -239,4 +258,40 @@ export const practices = [
   { icon: 'i-lucide-file-text', title: 'Decisão registrada', description: 'ADR e spec antes do código. Revisão em duas rodadas.' },
   { icon: 'i-lucide-monitor-check', title: 'QA no navegador', description: 'Cenários executados no navegador antes da entrega, com relatório de etapas.' },
   { icon: 'i-lucide-key-round', title: 'Segredos fora do código', description: 'Credenciais em arquivo protegido e chaves com escopo mínimo.' }
+]
+
+// Repositórios públicos no GitHub. Aqui o nome pode aparecer, porque o código é aberto.
+export const openSource = [
+  {
+    icon: 'i-lucide-package',
+    name: 'lerd',
+    kind: 'Fork · Go',
+    url: 'https://github.com/gabriel-sousa99/lerd',
+    description: 'Ambiente local de PHP em contêineres Podman. No meu fork: imagens de PHP 5.6 em diante com cliente Oracle, correções de segurança e release próprio que acompanha o projeto original.',
+    tech: ['Go', 'Podman', 'Quadlet', 'GitHub Actions']
+  },
+  {
+    icon: 'i-lucide-gauge',
+    name: 'claude-code-usage-monitor',
+    kind: 'Derivado de projeto aberto · Rust',
+    url: 'https://github.com/gabriel-sousa99/claude-code-usage-monitor',
+    description: 'App desktop nativo para Windows que mostra o uso do Claude Code. Minhas mudanças: tema, tradução para pt-BR, cache de token para não acordar o WSL a cada consulta e log de diagnóstico mais seguro.',
+    tech: ['Rust', 'egui', 'serde']
+  },
+  {
+    icon: 'i-lucide-map-pin',
+    name: 'background_locator_fixed',
+    kind: 'Fork · Kotlin',
+    url: 'https://github.com/gabriel-sousa99/background_locator_fixed',
+    description: 'Plugin Flutter que atualiza a localização em segundo plano. No meu fork: migração para o Kotlin embutido do Gradle, para o plugin compilar em projetos atuais.',
+    tech: ['Kotlin', 'Flutter', 'Android']
+  },
+  {
+    icon: 'i-lucide-spell-check',
+    name: 'asd-ste100-skill',
+    kind: 'Fork · Python',
+    url: 'https://github.com/gabriel-sousa99/asd-ste100-skill',
+    description: 'Skill de agente que aplica o Simplified Technical English. No meu fork: adaptação das regras para pt-BR e correção no lint de detecção de idioma.',
+    tech: ['Python', 'Skills de agente']
+  }
 ]

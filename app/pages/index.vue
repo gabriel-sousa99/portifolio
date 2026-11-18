@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ButtonProps, NavigationMenuItem, TabsItem } from '@nuxt/ui'
-import { profile, stats, services, stack, exploring, evolution, commitsPerYear, timeline, cases, flows, practices } from '~/data/portfolio'
+import { profile, stats, services, stack, exploring, evolution, commitsPerYear, timeline, cases, flows, practices, openSource } from '~/data/portfolio'
 
 const nav: NavigationMenuItem[] = [
   { label: 'Entregas', to: '#entregas' },
@@ -8,6 +8,7 @@ const nav: NavigationMenuItem[] = [
   { label: 'Trajetória', to: '#trajetoria' },
   { label: 'Casos', to: '#casos' },
   { label: 'Fluxos', to: '#fluxos' },
+  { label: 'Código aberto', to: '#codigo-aberto' },
   { label: 'Contato', to: '#contato' }
 ]
 
@@ -70,7 +71,7 @@ const flowTabs: TabsItem[] = flows.map((f, i) => ({ label: f.label, icon: f.icon
         </UContainer>
       </div>
 
-      <UPageSection id="entregas" headline="Para quem contrata" title="O que eu entrego" description="Quatro tipos de trabalho que já fiz em produção.">
+      <UPageSection id="entregas" headline="Para quem contrata" title="O que eu entrego" description="Cinco tipos de trabalho que já fiz em produção.">
         <UPageGrid class="lg:grid-cols-2">
           <UPageCard v-for="s in services" :key="s.title" :icon="s.icon" :title="s.title" :description="s.description" variant="subtle" />
         </UPageGrid>
@@ -147,6 +148,24 @@ const flowTabs: TabsItem[] = flows.map((f, i) => ({ label: f.label, icon: f.icon
         <UPageGrid>
           <UPageCard v-for="p in practices" :key="p.title" :icon="p.icon" :title="p.title" :description="p.description" variant="ghost" />
         </UPageGrid>
+      </UPageSection>
+
+      <UPageSection id="codigo-aberto" headline="Código aberto" title="Projetos no GitHub" description="Repositórios públicos com contribuição minha. Clique para ver o código.">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <UPageCard v-for="r in openSource" :key="r.name" :icon="r.icon" :to="r.url" target="_blank" spotlight>
+            <template #title>
+              <span class="font-mono">{{ r.name }}</span>
+              <UIcon name="i-lucide-arrow-up-right" class="ml-1 inline size-4 text-dimmed" aria-hidden="true" />
+            </template>
+            <template #description>
+              <span class="font-mono text-xs uppercase tracking-wider text-primary">{{ r.kind }}</span>
+              <span class="mt-2 block">{{ r.description }}</span>
+            </template>
+            <div class="flex flex-wrap gap-1.5">
+              <UBadge v-for="t in r.tech" :key="t" color="neutral" variant="outline" class="font-mono">{{ t }}</UBadge>
+            </div>
+          </UPageCard>
+        </div>
       </UPageSection>
 
       <UPageCTA
