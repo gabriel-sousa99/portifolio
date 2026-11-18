@@ -160,7 +160,7 @@ const slug = profile.name.toLowerCase().replace(' ', '-')
       </SectionBlock>
 
       <SectionBlock id="fluxos" title="Como o trabalho anda" description="Quatro fluxos que desenhei e uso. As etapas com contorno dependem de uma pessoa.">
-        <UTabs :items="flowTabs" default-value="0" color="neutral" variant="link" class="w-full" :ui="{ list: 'overflow-x-auto', trigger: 'min-w-max' }">
+        <UTabs :items="flowTabs" default-value="0" color="neutral" variant="link" class="w-full" :ui="{ list: 'overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden', trigger: 'min-w-max' }">
           <template #flow="{ item }">
             <div class="pt-6">
               <p class="mb-5 text-sm leading-6 text-muted">{{ flows[Number(item.value)]!.description.replace(/\.$/, '') }}</p>
