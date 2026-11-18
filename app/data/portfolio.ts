@@ -146,16 +146,10 @@ export const timeline = [
     description: 'Sistemas em PHP, JavaScript e Node.js. Rotinas automatizadas com scripts e ETL. Painéis e relatórios SQL em PostgreSQL, MySQL e SQL Server. Fluxos de chatbot.'
   },
   {
-    date: 'jun 2022 – nov 2023',
+    date: 'jun 2022 – atual',
     icon: 'i-lucide-rocket',
-    title: 'Desenvolvedor full stack júnior · saúde',
-    description: 'Sistemas hospitalares internos com Laravel, Vue e Oracle. Autenticação centralizada com SSO entre aplicações. Migração de Symfony para Laravel e de Vue 2 para Vue 3 com Pinia e Vite.'
-  },
-  {
-    date: 'nov 2023 – atual',
-    icon: 'i-lucide-bot',
-    title: 'Desenvolvedor full stack pleno · saúde',
-    description: 'Arquitetura e implementação da API de uma plataforma de atenção domiciliar. Observabilidade, deploy blue-green, gates de qualidade no pipeline, geolocalização em tempo real, ETL em Rust e agentes de IA com servidores MCP.'
+    title: 'Desenvolvedor full stack · saúde',
+    description: 'Sistemas hospitalares internos com Laravel, Vue e Oracle, com SSO entre aplicações. Migração de Symfony para Laravel e de Vue 2 para Vue 3. Arquitetura e implementação da API de uma plataforma de atenção domiciliar. Observabilidade, deploy blue-green, gates de qualidade no pipeline, geolocalização em tempo real, ETL em Rust e agentes de IA com servidores MCP.'
   }
 ]
 
