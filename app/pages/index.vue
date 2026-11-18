@@ -74,7 +74,7 @@ const slug = profile.name.toLowerCase().replace(' ', '-')
 
       <SectionBlock id="stack" title="Tecnologias que uso" description="Só entra aqui o que usei em código real">
         <dl class="divide-y divide-default border-y border-default">
-          <div v-for="g in stack" :key="g.title" class="grid gap-x-8 gap-y-2 py-4 sm:grid-cols-[11rem_1fr]">
+          <div v-for="g in stack" :key="g.title" class="grid gap-x-8 gap-y-2 py-3 sm:grid-cols-[11rem_1fr]">
             <dt>
               <span class="font-medium text-highlighted">{{ g.title }}</span>
               <span class="mt-1 block text-xs leading-5 text-dimmed">{{ g.note.replace(/\.$/, '') }}</span>
@@ -83,7 +83,7 @@ const slug = profile.name.toLowerCase().replace(' ', '-')
               <span v-for="t in g.items" :key="t" class="rounded-md border border-default px-2 py-0.5 font-mono text-xs leading-5 text-default">{{ t }}</span>
             </dd>
           </div>
-          <div class="grid gap-x-8 gap-y-2 py-4 sm:grid-cols-[11rem_1fr]">
+          <div class="grid gap-x-8 gap-y-2 py-3 sm:grid-cols-[11rem_1fr]">
             <dt class="font-medium text-highlighted">Em provas de conceito</dt>
             <dd class="text-sm leading-6 text-muted">{{ exploring.join(' · ') }}</dd>
           </div>
@@ -127,29 +127,35 @@ const slug = profile.name.toLowerCase().replace(' ', '-')
         </ul>
       </SectionBlock>
 
-      <SectionBlock id="casos" title="Problemas que resolvi" description="Os casos estão sem nome de sistema ou de cliente. O que importa é o problema, a técnica e o resultado.">
+      <SectionBlock id="casos" title="Problemas que resolvi" description="Os casos estão sem nome de sistema ou de cliente. Clique em um caso para ver o problema e o que fiz.">
         <div class="divide-y divide-default border-y border-default">
-          <article v-for="(c, i) in cases" :key="c.title" class="py-8">
-            <div class="flex items-baseline gap-4">
+          <details v-for="(c, i) in cases" :key="c.title" :open="i === 0" class="group">
+            <summary class="grid cursor-pointer list-none grid-cols-[2.25rem_1fr_1.25rem] items-baseline gap-y-1 py-5 outline-none transition-colors duration-150 hover:bg-elevated focus-visible:bg-elevated sm:-mx-3 sm:rounded-lg sm:px-3 [&::-webkit-details-marker]:hidden">
               <span class="tabular font-mono text-xs text-dimmed">{{ String(i + 1).padStart(2, '0') }}</span>
-              <h3 class="text-lg font-medium text-highlighted">{{ c.title }}</h3>
+              <span>
+                <span class="block text-lg font-medium leading-7 text-highlighted">{{ c.title }}</span>
+                <span class="mt-1 block text-sm leading-6 text-muted group-open:hidden">{{ c.result }}</span>
+              </span>
+              <UIcon name="i-lucide-plus" class="size-4 self-center text-dimmed transition-transform duration-150 group-open:rotate-45" aria-hidden="true" />
+            </summary>
+            <div class="pb-8 pl-9">
+              <dl class="grid gap-x-8 gap-y-4 text-sm leading-6 md:grid-cols-[2fr_3fr_2fr]">
+                <div>
+                  <dt class="text-xs text-dimmed">Problema</dt>
+                  <dd class="mt-1 text-muted">{{ c.problem }}</dd>
+                </div>
+                <div>
+                  <dt class="text-xs text-dimmed">O que fiz</dt>
+                  <dd class="mt-1 text-muted">{{ c.solution }}</dd>
+                </div>
+                <div>
+                  <dt class="text-xs text-primary">Resultado</dt>
+                  <dd class="mt-1 text-highlighted">{{ c.result }}</dd>
+                </div>
+              </dl>
+              <p class="mt-4 font-mono text-xs leading-5 text-dimmed">{{ c.tech.join(' · ') }}</p>
             </div>
-            <dl class="mt-4 grid gap-x-8 gap-y-4 pl-0 text-sm leading-6 sm:pl-9 md:grid-cols-3">
-              <div>
-                <dt class="text-xs text-dimmed">Problema</dt>
-                <dd class="mt-1 text-muted">{{ c.problem }}</dd>
-              </div>
-              <div>
-                <dt class="text-xs text-dimmed">O que fiz</dt>
-                <dd class="mt-1 text-muted">{{ c.solution }}</dd>
-              </div>
-              <div>
-                <dt class="text-xs text-primary">Resultado</dt>
-                <dd class="mt-1 text-highlighted">{{ c.result }}</dd>
-              </div>
-            </dl>
-            <p class="mt-4 font-mono text-xs leading-5 text-dimmed sm:pl-9">{{ c.tech.join(' · ') }}</p>
-          </article>
+          </details>
         </div>
       </SectionBlock>
 
