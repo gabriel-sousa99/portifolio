@@ -5,7 +5,7 @@ export const profile = {
   headline: 'Desenvolvedor back-end e full stack sênior',
   // Texto curto de disponibilidade ao lado do título. Exemplo: 'aberto a freelas'. Vazio = oculto.
   availability: '',
-  title: 'Construo sistemas web completos: API, interface, infraestrutura e agentes de IA.',
+  title: 'Construo sistemas web completos: API, interface, infraestrutura e agentes de IA',
   description:
     'Tenho 8 anos em TI e 5 em desenvolvimento, com mais de 4 em sistemas de saúde. Trabalho com PHP e Laravel, Vue e Quasar, Flutter com GPS e tempo real, Oracle e PostgreSQL, Rust e automação com agentes.',
   github: 'https://github.com/gabriel-sousa99',

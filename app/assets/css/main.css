@@ -2,21 +2,49 @@
 @import "@nuxt/ui";
 
 @theme {
-  --font-sans: 'Public Sans', sans-serif;
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Rampa neutra quente. O destaque âmbar fica só na ação, na rota e no número que importa. */
+:root {
+  --ui-bg: #f7f4ee;
+  --ui-bg-muted: #f2eee6;
+  --ui-bg-elevated: #fdfbf7;
+  --ui-bg-accented: #efe9df;
+  --ui-text-highlighted: #1f1b16;
+  --ui-text: #3b352d;
+  --ui-text-toned: #5e554a;
+  --ui-text-muted: #5e554a;
+  --ui-text-dimmed: #7b7266;
+  --ui-border: rgb(31 27 22 / 0.1);
+  --ui-border-muted: rgb(31 27 22 / 0.07);
+  --ui-border-accented: rgb(31 27 22 / 0.16);
+  --ui-primary: #a85f00;
+  --ui-radius: 0.5rem;
+}
+
+.dark {
+  --ui-bg: #161513;
+  --ui-bg-muted: #12110f;
+  --ui-bg-elevated: #1c1a18;
+  --ui-bg-accented: #262421;
+  --ui-text-highlighted: #efe9de;
+  --ui-text: #d6cfc3;
+  --ui-text-toned: #aaa398;
+  --ui-text-muted: #aaa398;
+  --ui-text-dimmed: #8a847a;
+  --ui-border: rgb(239 233 222 / 0.09);
+  --ui-border-muted: rgb(239 233 222 / 0.06);
+  --ui-border-accented: rgb(239 233 222 / 0.16);
+  --ui-primary: #f0a43a;
 }
 
 html { scroll-behavior: smooth; }
 section[id] { scroll-margin-top: 5rem; }
-
-.grid-bg {
-  background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--ui-border) 55%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--ui-border) 55%, transparent) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 30%, transparent 75%);
-}
+body { font-feature-settings: 'ss01'; }
+.tabular { font-variant-numeric: tabular-nums; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
