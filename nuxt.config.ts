@@ -4,14 +4,13 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   ssr: true,
   app: {
-    // No GitHub Pages o site fica em /<repositório>/. O workflow define NUXT_APP_BASE_URL.
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
     head: {
       htmlAttrs: { lang: 'pt-BR' },
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: `${process.env.NUXT_APP_BASE_URL || '/'}favicon.svg` }]
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }]
     }
   },
-  nitro: { preset: 'github-pages' },
+  // A página é gerada no build. A Vercel serve o HTML pronto.
+  routeRules: { '/': { prerender: true } },
   colorMode: { preference: 'dark', fallback: 'dark' },
   icon: { serverBundle: 'local' },
   devtools: { enabled: false }

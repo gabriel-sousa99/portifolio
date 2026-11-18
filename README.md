@@ -1,6 +1,6 @@
 # Portfólio
 
-Site pessoal feito com [Nuxt 4](https://nuxt.com) e [Nuxt UI](https://ui.nuxt.com). O site é estático e a publicação usa o GitHub Pages.
+Site pessoal feito com [Nuxt 4](https://nuxt.com) e [Nuxt UI](https://ui.nuxt.com). A publicação usa a Vercel.
 
 ## Rodar local
 
@@ -13,13 +13,9 @@ pnpm dev
 
 Todo o texto fica em `app/data/portfolio.ts`. Os campos `email`, `linkedin` e `availability` de `profile` começam vazios. Preencha cada um para mostrar o botão ou o texto correspondente.
 
-## Gerar e publicar
+## Publicar
 
-```bash
-pnpm generate
-```
-
-O workflow `.github/workflows/deploy.yml` publica a branch `main` no GitHub Pages. Em **Settings > Pages**, selecione a fonte **GitHub Actions**.
+A publicação usa a Vercel. Importe o repositório no painel da Vercel. A Vercel detecta o Nuxt e publica a cada push na branch `main`.
 
 ## Regra de conteúdo
 
